@@ -1,9 +1,10 @@
-const { User } = require('../models');
+const { User, Thought } = require('../models');
 
 const userController = {
-    // GET all users
-    getAllUser(req, res) {
+    // GET all users /api/users
+    getAllUsers(req, res) {
         User.find({})
+            .select('-__v')
             .then(dbUserData => res.json(dbUserData))
             .catch(err => {
                 console.log(err);
@@ -14,7 +15,7 @@ const userController = {
     // GET a single user by _id & populated thought & friend data
     getUserById({ params }, res) {
         User.findOne({ _id: params.id })
-        .populate({
+            .populate({
             path: 'thoughts',
             select: '-__v'
             })
@@ -37,7 +38,7 @@ const userController = {
             });
     },
 
-    // POST a new user
+    // POST a new user /api/users
     createUser({ body }, res) {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
@@ -61,12 +62,22 @@ const userController = {
     // **BONUS: Remove a user's associated thoughts when deleted**
     deleteUser({ params }, res) {
         User.findOneAndDelete({ _id: params.id })
+            .then(deletedUser => {
+                if (!deletedUser) {
+                    return res.status(404).json({ message: 'No user found with this id!' });
+                }
+                return Thought.findOneAndUpdate(
+                    { _id: params.thoughtId },
+                    { $pull: { thoughts: params.thoughtId } },
+                    { new: true }
+                );
+            })
             .then(dbUserData => {
                 if (!dbUserData) {
                     res.status(404).json({ message: 'No user found with this id!' });
                     return;
                 }
-                res.json(dbUserData);
+                res.json({ message: 'User & associated thoughts have been deleted!' });
             })
             .catch(err => res.status(400).json(err))
     },
