@@ -1,6 +1,6 @@
 # Project 18: NoSQL Challenge
 ## Social Network API
-MongoDB is a popular choice for many social media networks due to its speed with large amounts of data and flexibility with unstructured data. The purpose of this project was to build an API for a social network web application where users can share their thoughts, react to friends' thoughts, and create a friend list. The application will comprise of Express.js for routing, MongoDB for the database, the Mongoose ODM, and Moment.js for timestamps.
+MongoDB is a popular choice for many social media networks due to its speed with large amounts of data and flexibility with unstructured data. The purpose of this project was to build an API for a social network web application where users can share their thoughts, react to friends' thoughts, and create a friend list. The application comprises of Express.js for routing, MongoDB for the database, the Mongoose ODM, and Moment.js for timestamps.
 
 ![screenshot.png](/../main/assets/images/screenshot.png)
 
@@ -13,14 +13,14 @@ MongoDB is a popular choice for many social media networks due to its speed with
 
 ## Installation
 1. To install this application, `git clone` this repository, or download the `.zip` file in the dropdown after clicking the green ‘Code’ button at the top of this repository—as long as it is in your local branch.
-2. Ensure Node.js and MongoDB is installed in your operating system. Please refer to MongoDB's [instructions](https://www.mongodb.com/docs/manual/administration/install-community/) on how to install it on your OS.
+2. Ensure Node.js and MongoDB is installed in your operating system. Please refer to MongoDB's [instructions](https://www.mongodb.com/docs/manual/administration/install-community/) on how to install it on your OS if need be.
 3. Install all of the dependencies by entering the following command in terminal:
 ```
 npm install express mongoose moment
 ```
 
 ## Usage
-1. Make sure that you are in the root directory in order for this application to run successfully. Start up the application by running the following command in terminal:
+1. In the root directory of your application, start up the application by running the following command in terminal:
 ```
 npm start
 ```
@@ -38,14 +38,14 @@ npm start
 | I want to.. | Users |
 | --- | --- |
 | Add a friend | POST /api/users/:userId/friends/:friendId |
-| Delete a friend | DELETE /api/users/:userId/friends/:friendId  |
+| Remove a friend | DELETE /api/users/:userId/friends/:friendId  |
 
 | I want to.. | Thoughts |
 | --- | --- |
 | Add a reaction | POST /api/thoughts/:thoughtId/reactions |
-| Delete a reaction | DELETE /api/thoughts/:thoughtId/reactions |
+| Remove a reaction | DELETE /api/thoughts/:thoughtId/reactions |
 
-4. Make sure to replace `:id`, `:userId`, `:friend`, and `:thoughtId` with their respective IDs from the database.
+4. Replace `:id`, `:userId`, `:friend`, and `:thoughtId` with their respective IDs from the database.
 
 ### Video Walkthrough
 [Video Link Here](https://youtu.be/WuN6uqt1Dhw)
