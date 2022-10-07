@@ -25,7 +25,7 @@ npm install express mongoose moment
 npm start
 ```
 2. Open an API Client of your choice (i.e. [Insomnia](https://insomnia.rest/), [Postman](https://www.postman.com/)). Enter `http://localhost:3001/api/(endpoint)` as the URL, and replace `(endpoint)` with `users` or `thoughts` to get its respective data.
-3. The tables below outlines all methods and endpoints to make API requests for this application:
+3. The tables below outline all of the methods and endpoints to make API requests for this application:
 
 | I want to.. | Users | Thoughts |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ npm start
 4. Replace `:id`, `:userId`, `:friend`, and `:thoughtId` with their respective IDs from the database.
 
 ### Video Walkthrough
-[Video Link Here](https://youtu.be/WuN6uqt1Dhw)
+[https://www.youtube.com/watch?v=BaIgnPttq9A](https://www.youtube.com/watch?v=BaIgnPttq9A)
 
 ![demo.gif](/../main/assets/images/demo.gif)
 
