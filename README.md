@@ -12,7 +12,7 @@ MongoDB is a popular choice for many social media networks due to its speed with
 - [Moment.js](https://momentjs.com/)
 
 ## Installation
-1. To install this application, `git clone` this repository, or download the `.zip` file in the dropdown after clicking the green ‘Code’ button at the top of this repository—as long as it is in your local branch.
+1. To install this application, `git clone` this repository, or download the `.zip` file in the dropdown after clicking the ‘Code’ button at the top of this repository—as long as it is in your local branch.
 2. Ensure Node.js and MongoDB is installed in your operating system. Please refer to MongoDB's [instructions](https://www.mongodb.com/docs/manual/administration/install-community/) on how to install it on your OS if need be.
 3. Install all of the dependencies by entering the following command in terminal:
 ```
